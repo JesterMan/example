@@ -7,6 +7,9 @@ html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
     font: inherit;
     vertical-align: baseline;
 }
+div{
+    -webkit-overflow-scrolling:touch; overflow:auto;
+}
 
 
 .skrollr-desktop #scrollbar {display:none;}
@@ -22,19 +25,16 @@ html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
 #stars {
     z-index: 48;
     background-image:url(../img/footer-1.png);
-
 }
 
 #planet {
     z-index:49;
     background-image:url(../img/footer-2.png);
-
 }
 
 #rocket{
     z-index:50;
-    background-image:url(../img/footer-3.png);
-    
+    background-image:url(../img/footer-3.png);   
 }
 
 
@@ -46,13 +46,14 @@ html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
 .background{
     background:url(../img/bkg-pattern.png);
     background-repeat:repeat-y;
-    height: 3000px;
+    height: 2000px;
+    width: 100%;
 }
 .content{
-    margin-top:50px;
     height: 2307px;
     width: 1024px;
     background:url(../img/content.png);
+    background-repeat: no-repeat;
 
 }
 .nav{
@@ -62,7 +63,6 @@ html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
     background-repeat: no-repeat;
     height: 768px;
     width: 129px;
-    margin-top:-50px;
 }
 
 
@@ -99,19 +99,27 @@ html, body {
     /*
         May cause issues on Android default browser (see #331 on GitHub).
     */
-    position:absolute;
+    position:fixed;
 }
 
 .skrollable .skrollable {
     /*
      * Second-level skrollables are positioned relative their parent skrollable
      */
-    position:absolute;
+    position:fixed;
 }
 
 .skrollable .skrollable .skrollable {
     /*
      * Third-level (and below) skrollables are positioned static
      */
-    position:static;
+    position:fixed;
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
 }
